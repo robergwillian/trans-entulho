@@ -14,6 +14,10 @@ img {
   height: auto;
 }
 
+ul {
+  list-style-type: none;
+}
+
 /* Variables *************************************************/
 :root {
   --hue: 225;
@@ -37,14 +41,14 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-h1 {
+.title {
   font: 700 1.875rem 'Poppins', sans-serif;
   color: var(--title-color);
-  -webkit-font-smoothing: auto;
+  -webkit-font-smoothing: antialiased;
 }
 
 .button {
-  background-color: var(--base-color);
+  background-color: var(--base-color-alt);
   color: var(--text-color-light);
   height: 3.5rem;
   display: inline-flex;
@@ -56,7 +60,7 @@ h1 {
 }
 
 .button:hover {
-  background: var(--base-color-alt);
+  background: var(--base-color-second);
 }
 
 .divider-1 {
@@ -81,13 +85,11 @@ h1 {
   left: 0;
 }
 
-nav {
-  height: var(--header-height);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
+main {
+  margin-top: calc(var(--header-height) + 2rem);
 }
+
+/* LOGO *************************************************/
 
 .logo {
   font: 700 1.875rem 'Poppins', sans-serif;
@@ -96,9 +98,75 @@ nav {
 }
 
 .logo span {
+  color: var(--base-color-alt);
+}
+/* NAVIGATION *************************************************/
+
+nav {
+  height: var(--header-height);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+nav ul li {
+  text-align: center;
+}
+
+nav ul li a {
+  transition: color 0.2s;
+  position: relative;
+}
+nav ul li a:hover {
   color: var(--base-color);
 }
 
+nav ul li a::after {
+  content: '';
+  width: 0%;
+  height: 2px;
+  background: var(--base-color);
+  position: absolute;
+  left: 0;
+  bottom: -1.5rem;
+  transition: width 0.2s;
+}
+
+nav ul li a:hover::after {
+  width: 100%;
+}
+
+nav .menu {
+  opacity: 0;
+  visibility: hidden;
+}
+
+/** Mostrar Menu */
+
+nav.show .menu {
+  opacity: 1;
+  visibility: visible;
+  background: var(--body-color);
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+nav.show .menu {
+  display: grid;
+  place-content: center;
+}
+
+nav.show ul.grid {
+  gap: 4rem;
+}
+
+/*** /Mostrar Menu ***/
+
+/*********************************************/
 .container {
   margin-left: 1.5rem;
   margin-right: 1.5rem;
@@ -111,10 +179,6 @@ nav {
 
 .section {
   padding: 5rem 0;
-}
-
-main {
-  margin-top: var(--header-height);
 }
 
 /************HOME******************/
@@ -132,7 +196,7 @@ main {
 
 #home .image::before {
   content: '';
-  background: var(--base-color-second);
+  background: var(--base-color-alt);
   position: absolute;
   height: 100%;
   width: 100%;
