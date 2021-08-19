@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Trans Entulho - Coleta de Residuos</title>
 
+    <!--Swiper JS-->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
     <!--ICONES-->
     <link rel="stylesheet" href="assets/fonts/style.css" />
     <!--Styles-->
@@ -39,6 +44,8 @@
     </header>
 
     <main>
+      <!-- home -->
+
       <section class="section" id="home">
         <div class="container grid">
           <div class="image">
@@ -50,12 +57,19 @@
           <div class="text">
             <h2 class="title">Soluções em coleta de residuos</h2>
             <p>Atendemos toda região de Tubarão/SC</p>
-            <a class="button" href="#">Agende uma caçamba</a>
+            <a
+              class="button"
+              href="https://api.whatsapp.com/send?phone=+554836262222&text=Ola! Gostaria de mais informações sobre as caçambas de entulho"
+              target="_blank"
+              >Agende uma caçamba</a
+            >
           </div>
         </div>
       </section>
 
       <div class="divider-1"></div>
+
+      <!-- About -->
 
       <section class="section" id="about">
         <div class="container grid">
@@ -89,6 +103,8 @@
       </section>
 
       <div class="divider-2"></div>
+
+      <!-- Services -->
 
       <section class="section" id="services">
         <div class="container grid">
@@ -128,7 +144,115 @@
           </div>
         </div>
       </section>
+
+      <div class="divider-1"></div>
+
+      <!-- Testimonials -->
+
+      <section class="section" id="testimonials">
+        <div class="container">
+          <header>
+            <h2 class="title">Depoimentos de clientes</h2>
+          </header>
+
+          <div class="testimonials swiper-container">
+            <div class="swiper-wrapper">
+              <div class="testimonial swiper-slide">
+                <blockquote>
+                  <p>
+                    <span>&ldquo;</span>Parabens pela qualidade de serviço.
+                    Nossa empresa foi muito bem atendida. Obrigado a todos os
+                    profissionais desta empresa em nome da MW3.
+                    Profissionalismo, Qualidade, Receptividade, Valor.
+                  </p>
+
+                  <cite>
+                    <img
+                      src="https://randomuser.me/api/portraits/women/3.jpg"
+                      alt=""
+                    />
+                    Wanessa Souza
+                  </cite>
+                </blockquote>
+              </div>
+
+              <div class="testimonial swiper-slide">
+                <blockquote>
+                  <p>
+                    <span>&ldquo;</span>Serviço de boa qualidade. São bem
+                    prestativos. Vale a pena!
+                  </p>
+
+                  <cite>
+                    <img
+                      src="https://randomuser.me/api/portraits/men/20.jpg"
+                      alt=""
+                    />
+                    João Salvador
+                  </cite>
+                </blockquote>
+              </div>
+
+              <div class="testimonial swiper-slide">
+                <blockquote>
+                  <p>
+                    <span>&ldquo;</span>Ótimo atendimento e responsabilidade
+                    ambiental!
+                  </p>
+
+                  <cite>
+                    <img
+                      src="https://randomuser.me/api/portraits/men/93.jpg"
+                      alt=""
+                    />
+                    Eduardo Esteves
+                  </cite>
+                </blockquote>
+              </div>
+            </div>
+            <!-- If we need pagination -->
+            <div class="swiper-pagination"></div>
+          </div>
+        </div>
+      </section>
+
+      <div class="divider-2"></div>
+
+      <!-- Contact -->
+
+      <section class="section" id="contact">
+        <div class="container grid">
+          <div class="text">
+            <h2 class="title">Entre em contato com a gente</h2>
+            <p>
+              Entre em contato para mais informações ou para agendar sua
+              caçamba.
+            </p>
+            <a
+              class="button"
+              href="https://api.whatsapp.com/send?phone=+554836262222&text=Ola! Gostaria de mais informações sobre as caçambas de entulho"
+              target="_blank"
+              ><i class="icon-whatsapp"></i>Entrar em contato</a
+            >
+          </div>
+
+          <div class="links">
+            <ul class="grid">
+              <li><i class="icon-phone"></i>48-3626-2222</li>
+              <li>
+                <i class="icon-map-pin"></i>Ave Getulio Vargas 4979, Revoredo,
+                Tubarão/SC
+              </li>
+              <li><i class="icon-mail"></i>transentulho2222@gmail.com</li>
+            </ul>
+          </div>
+        </div>
+      </section>
     </main>
+    <!-- SWIPER JS SCRIPT-->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <!-- Scroll Reveal -->
+    <script src="https://unpkg.com/scrollreveal"></script>
     <script src="main.js"></script>
   </body>
 </html>
