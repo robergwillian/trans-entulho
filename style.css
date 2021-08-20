@@ -116,6 +116,10 @@ main {
 .logo span {
   color: var(--base-color-alt);
 }
+
+.logo-alt span {
+  color: var(--body-color);
+}
 /* NAVIGATION *************************************************/
 
 nav {
@@ -224,7 +228,7 @@ nav.show div.icon-close {
 }
 
 .section {
-  padding: 5rem 0;
+  padding: 4rem 0;
 }
 
 .section .title {
@@ -447,4 +451,69 @@ nav.show div.icon-close {
 
 #contact ul li i {
   color: var(--base-color);
+}
+
+/********FOOTER***********/
+
+footer {
+  background: var(--base-color);
+}
+
+footer .logo {
+  display: inline-block;
+  margin-bottom: 1.5rem;
+}
+
+footer .brand p {
+  color: var(--text-color-light);
+  margin-bottom: 0.75rem;
+}
+
+footer .social i {
+  font-size: 1.5rem;
+  margin-right: 0.625rem;
+  color: var(--text-color-light);
+  border: 1px solid white;
+}
+
+footer .social a {
+  transition: 0.3s;
+  display: inline-block;
+}
+
+footer .social a:hover {
+  transform: translateY(-8px);
+}
+/******* BACK TO TOP ************/
+
+.back-to-top {
+  background: var(--base-color);
+  color: var(--text-color-light);
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  padding: 0.5rem;
+  clip-path: circle();
+  font-size: 1.5rem;
+  line-height: 0;
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.3s;
+  transform: translateY(100%);
+}
+
+.back-to-top.show {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0%);
+}
+
+/******** RESPONSIVO *************/
+/*   
+extra large 1200 >
+large 1023 >
+large 992 >
+medium 767 >   */
+
+@media (min-width: 992px) {
 }
