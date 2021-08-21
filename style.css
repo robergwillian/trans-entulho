@@ -29,8 +29,12 @@ ul {
   --text-color: hsl(0 0% 46%);
   --text-color-light: hsl(0 0% 98%);
   --body-color: hsl(0 0% 98%);
-
   --header-height: 4.5rem;
+
+  --subtitle-font-size: 1rem;
+  --title-font-size: 1.875rem;
+  --title-font: 'Poppins', sans-serif;
+  --body-font: 'DM Sans', sans-serif;
 }
 
 /* BASE *************************************************/
@@ -39,14 +43,14 @@ html {
 }
 
 body {
-  font: 400 1rem 'DM Sans', sans-serif;
+  font: 400 1rem var(--body-font);
   color: var(--text-color);
   background: var(--body-color);
   -webkit-font-smoothing: antialiased;
 }
 
 .title {
-  font: 700 1.875rem 'Poppins', sans-serif;
+  font: 700 var(--title-font-size) var(--title-font);
   color: var(--title-color);
   -webkit-font-smoothing: antialiased;
 }
@@ -59,7 +63,7 @@ body {
   align-items: center;
   padding: 0 2rem;
   border-radius: 0.25rem;
-  font: 500 1rem 'Dm Sans', sans-serif;
+  font: 500 1rem var(--body-font);
   transition: background 0.3s;
 }
 
@@ -108,7 +112,7 @@ main {
 /* LOGO *************************************************/
 
 .logo {
-  font: 700 1.875rem 'Poppins', sans-serif;
+  font: 700 1.875rem var(--title-font);
   font-size: 1.31rem;
   color: var(--title-color);
 }
@@ -138,7 +142,8 @@ nav ul li a {
   transition: color 0.2s;
   position: relative;
 }
-nav ul li a:hover {
+nav ul li a:hover,
+nav ul li a.active {
   color: var(--base-color);
 }
 
@@ -153,7 +158,8 @@ nav ul li a::after {
   transition: width 0.2s;
 }
 
-nav ul li a:hover::after {
+nav ul li a:hover::after,
+nav ul li a.active::after {
   width: 100%;
 }
 
@@ -228,11 +234,15 @@ nav.show div.icon-close {
 }
 
 .section {
-  padding: 4rem 0;
+  padding: calc(4rem + var(--header-height)) 0;
 }
 
 .section .title {
   margin-bottom: 1rem;
+}
+
+.section .subtitle {
+  font-size: var(--subtitle-font-size);
 }
 
 .section header {
@@ -459,6 +469,10 @@ footer {
   background: var(--base-color);
 }
 
+footer.section {
+  padding: 4rem 0;
+}
+
 footer .logo {
   display: inline-block;
   margin-bottom: 1.5rem;
@@ -484,6 +498,7 @@ footer .social a {
 footer .social a:hover {
   transform: translateY(-8px);
 }
+
 /******* BACK TO TOP ************/
 
 .back-to-top {
@@ -509,11 +524,144 @@ footer .social a:hover {
 }
 
 /******** RESPONSIVO *************/
-/*   
-extra large 1200 >
-large 1023 >
-large 992 >
-medium 767 >   */
+/* extra large 1200 > */
+@media (min-width: 1200px) {
+  main {
+    margin-top: var(--header-height);
+  }
+
+  /***** REUSABLE CLASSES ***********/
+  .container {
+    max-width: 1120px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .section {
+    padding: 10rem 0;
+  }
+
+  .section header {
+    max-width: 32rem;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .button {
+    height: 3.25rem;
+  }
+  /*********** NAV ************/
+
+  nav .menu {
+    visibility: visible;
+    opacity: 1;
+    top: 0;
+  }
+
+  nav .menu ul {
+    display: flex;
+    gap: 2rem;
+  }
+
+  nav .menu ul li a.title {
+    font: 400 1rem var(--body-font);
+  }
+
+  nav .menu ul li a.title.active {
+    font-weight: bold;
+  }
+
+  nav .icon-menu {
+    display: none;
+  }
+
+  /****** HOME *****/
+  #home .container {
+    grid-auto-flow: column;
+    width: fit-content;
+    justify-content: space-between;
+    margin: 0 auto;
+    align-items: center;
+  }
+
+  #home .image {
+    order: 1;
+  }
+
+  #home .image img {
+    width: 75%;
+    right: -2.93rem;
+  }
+
+  #home .text {
+    order: 0;
+    max-width: 24rem;
+    text-align: left;
+  }
+
+  /************ABOUT **************/
+
+  #about .container {
+    grid-auto-flow: column;
+    margin: 0 auto;
+  }
+
+  /**********SERVICES************/
+
+  .cards {
+    grid-template-columns: 1fr 1fr 1fr; /*pega todo o espaco e dividi em frações iguais*/
+  }
+
+  .card {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+  /********** TESTIMONIALS ******/
+
+  #testimonials .container {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /********** CONTACT **************/
+
+  #contact .container {
+    grid-auto-flow: column;
+    align-items: center;
+  }
+  #contact .text {
+    max-width: 25rem;
+  }
+
+  #contact .social {
+  }
+
+  /***********FOOTER**************/
+
+  footer .container {
+    grid-auto-flow: column;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  footer.section {
+    padding: 3.75rem 0;
+  }
+
+  footer .logo {
+    font-size: 2.25rem;
+  }
+}
+/* large 1023 > */
+
+/*large 992 >*/
 
 @media (min-width: 992px) {
+  :root {
+    --title-font-size: 2.25rem;
+    --subtitle-font-size: 1.125rem;
+  }
 }
+
+/* medium 767 >   */
