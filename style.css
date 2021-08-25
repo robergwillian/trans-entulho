@@ -384,6 +384,7 @@ nav.show div.icon-close {
 #testimonials .container {
   margin: left 0;
   margin: right 0;
+  overflow: hidden;
 }
 
 #testimonials header {
@@ -622,6 +623,7 @@ footer .social a:hover {
   #testimonials .container {
     margin-left: auto;
     margin-right: auto;
+    overflow: hidden;
   }
 
   /********** CONTACT **************/
@@ -665,3 +667,9 @@ footer .social a:hover {
 }
 
 /* medium 767 >   */
+@media (min-width: 767px) {
+  :root {
+    --title-font-size: 2.25rem;
+    --subtitle-font-size: 1.125rem;
+  }
+}
