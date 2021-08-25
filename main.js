@@ -53,7 +53,7 @@ const swiper = new Swiper('.swiper-container', {
 
 const scrollReveal = ScrollReveal({
   origin: 'top',
-  distance: '30px',
+  distance: '5px',
   duration: 700,
   reset: true
 })
