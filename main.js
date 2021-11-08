@@ -50,7 +50,7 @@ const swiper = new Swiper('.swiper-container', {
 })
 
 /****** SCROLL REVEAL********* */
-
+/*
 const scrollReveal = ScrollReveal({
   origin: 'top',
   distance: '5px',
@@ -70,6 +70,7 @@ scrollReveal.reveal(
   `,
   { interval: 100 }
 )
+*/
 const backToTopButton = document.querySelector('.back-to-top')
 
 function backToTop() {
